@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script>
+        // Values
+let num1 = 0;
+let num2 = 0;
+
+
+// Functions
+
+// function clearNumber() { document.getElementById("result").innerHTML = "__"; } function sum() { document.getElementById("result").innerHTML = "the sum is: " + (Number(document.getElementById('num1').value) + Number(document.getElementById('num2').value)); } function sub() { document.getElementById("result").innerHTML = "the difference is: " + (Number(document.getElementById('num1').value) - Number(document.getElementById('num2').value)); } function multyply() { document.getElementById("result").innerHTML = "the product is: " + (Number(document.getElementById('num1').value) * Number(document.getElementById('num2').value)); } function divide() { document.getElementById("result").innerHTML = "the quotient is: " + (Number(document.getElementById('num1').value) / Number(document.getElementById('num2').value)); } function raising() { document.getElementById("result").innerHTML = "the raising is: " + (Number(document.getElementById('num1').value) ** Number(document.getElementById('num2').value)); } function calculateLog() { document.getElementById("result").innerHTML = "Logarithm result: " + (Math.log(Number(document.getElementById('num1').value)) / Math.log(Number(document.getElementById('num2').value))); } function calculateRoot() { document.getElementById("result").innerHTML = "root result: " + Math.pow(Number(document.getElementById('num1').value), 1 / Number(document.getElementById('num2').value)); } function equal() { }
+
+function clearNumber() {
+    document.getElementById("result").innerHTML = "__";
+}
+
+function sum() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "The sum is: " + (num1 + num2);
+}
+
+function sub() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "The difference is: " + (num1 - num2);
+}
+
+function multiply() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "The product is: " + (num1 * num2);
+}
+
+function divide() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "The quotient is: " + (num1 / num2);
+}
+
+function power() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "The result is: " + (num1 ** num2);
+}
+
+function calculateLog() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "Logarithm result: " + (Math.log(num1) / Math.log(num2));
+}
+
+function calculateRoot() {
+    let num1 = Number(document.getElementById('num1').value);
+    let num2 = Number(document.getElementById('num2').value);
+    document.getElementById("result").innerHTML = "Root result: " + Math.pow(num1, 1 / num2);
+}
+
+function equal() {
+    // Function to be implemented
+}
+
+    </script>
+    <style>
+        .button {
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+}
+
+:root {
+    --var-body-bg: #eee;
+    --var-body-font-color: #222;
+    --var-dark-body-bg: #333;
+    /* --var-dfc means --var-dark-font-color*/
+    --var-dfc: #999;
+}
+
+:root:has(#light:checked) {
+    background-color: var(--var-body-bg);
+    color: var(--var-body-font-color);
+}
+
+:root:has(#dark:checked) {
+    background-color: var(--var-dark-body-bg);
+    color: var(--var-dfc);
+}
+
+.set_color {
+    display: inline-block;
+}
+
+* {
+    text-transform: capitalize;
+    font-family: roboto, system-ui;
+}
+
+.constants {
+    label {
+        text-transform: lowercase !important;
+    }
+}
+
+.ideas {
+    text-transform: lowercase !important;
+}
+
+.letter {
+    text-transform: capitalize !important ;
+}
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <fieldset class="set_color">
+            <legend>pick a color</legend>
+            <label for="theme">light theme</label>
+            <input type="radio" name="theme" checked class="light-theme" id="light">
+
+            <label for="theme"> dark theme</label>
+            <input type="radio" name="theme" class="dark" id="dark">
+        </fieldset>
+    </form>
+    <br>
+    <br>
+    <div class="num1">
+        <label for="">num1:</label>
+        <input type="text" id="num1" name="num1" placeholder="x">
+    </div>
+
+    <div class="num2">
+        <label for="">num2:</label>
+        <input type="text" id="num2" name="num2" placeholder="x">
+    </div>
+
+    <p id="result">__</p>
+    <p>constants:</p>
+    <!--<div class="num1">
+        <label for="">num1:</label>
+        <input type="text" id="input" name="num1" placeholder="x">
+    </div>-->
+
+    <!-- constants -->
+    <div class="constants">
+        <label> π ≈ 3.141592653 </label>
+        <br>
+        <label> e ≈ 2.718281828 </label>
+        <br>
+        <label> φ ≈ 1.618033988 </label>
+        <br>
+        <label> ψ ≈ 1.465571231 </label>
+        <br>
+    </div>
+        <label> Ω ≈ 0.567143290 </label>
+        <div class="constants">
+            <label> i = √-1 </label>
+        </div>
+    <!-- functions -->
+    <p>special functions:</p>
+    <button onclick="clearNumber()" class="button">clear number </button>
+    <p>arithmetic operations:</p>
+    <button onclick="sum()" class="button">sum</button>
+    <br>
+    <button onclick="sub()" class="button">sub</button>
+    <br>
+    <button onclick="multiply()" class="button">multiply</button>
+    <br>
+    <button onclick="divide()" class="button">quotient</button>
+    <br>
+    <p>Everything related to exponents:</p>
+    <button onclick="raising()" class="button">raising</button>
+    <br>
+    <button onclick="calculateRoot()" class="button">root</button><label> - num1 is the number we are taking the root
+        of.
+        num2 is the degree of the root.</label>
+    <br>
+    <button onclick="calculateLog()" class="button">log</button><label> - num1 is the argument of the logarithm, - num2
+        is the base.</label>
+
+    <div class="info">
+        <h1> information about code: </h1>
+        <div class="about1">
+            <h2>1. how is this works</h2>
+            <p> When you press a button, javascript starts to turns on a function and it starts to make an operation
+                with 2 numbers</p>
+            <h2>2. authors</h2>
+            <p> authors: Jahangir Gasimov. </p>
+            <h2>3. Coming soon...</h2>
+            <p> ... </p>
+        </div>
+        <br>
+        <h1> Contact the developers: </h1>
+        <div class="ideas">
+            <h3>to give ideas:</h3>
+            <h4>jahangir gasimov:</h4>
+            <a href="tel:+994513524927"> jahangir qasimovs phone number </a>
+            <br>
+            <a href="https://t.me/Gasim_gahangir" target="_blank"> jahangir qasimovs telegram </a>
+            <br>
+            <a href="https://wa.me/+994513524927" target="_blank">jahangir qasimovs whatsapp</a>
+    </div>
+    <br><br><br><br>
+
+
+</body>
+
+</html>
